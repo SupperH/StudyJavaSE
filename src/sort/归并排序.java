@@ -35,20 +35,20 @@ public class 归并排序 {
     //	if(1 == 1) return;
     //	最后再走merge
     //以此类推
-     static void sort(int[] arr,int left,int right){
+    static void sort(int[] arr,int left,int right){
         if(left == right) return;
-       //分成两半把数组
-       int mid = (left + right)/2;
-       //左边排序
-       sort(arr,left,mid);
-       //右边排序
-       sort(arr,mid+1,right);
+        //分成两半把数组
+        int mid = (left + right)/2;
+        //左边排序
+        sort(arr,left,mid);
+        //右边排序
+        sort(arr,mid+1,right);
 
-       // 合并两个有序数组
-       merge(arr,left,mid+1,right);
+        // 合并两个有序数组
+        merge(arr,left,mid+1,right);
 
 
-     }
+    }
 
     //可以灵活排序数组的那一部分，不仅仅是单纯的分一半，可能分一半的一半
     //rightbound代表当前数组循环的临界值，因为可能只要排序一部分所以
