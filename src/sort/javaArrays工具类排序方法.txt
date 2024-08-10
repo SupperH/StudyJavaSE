@@ -1,0 +1,39 @@
+Arrays.sort底层使用的就是快速排序
+但是并不是只使用快速排序
+
+他会根据数组长度，内容来判断使用什么排序
+比如当数组长度小于286，那么会使用原始的quicksort单轴快排
+
+或者会对数组进行切割判断是否适合使用timsort（归并排序改进版）
+如果合适那么使用timsort
+
+如果数组里并不是高度结构化的，那么会使用快速排序替代归并排序
+
+如果数组长度很小，那么就使用插入排序
+这里的插入排序每一个边界设置了哨兵，不用做左边界检查，
+叫做双插入排序pair insertion sort
+，一次性插入两个数，这要比传统的插入排序要快
+
+原话：
+Every element from adjoining part plays the role
+of sentinel, therefore this allows us to avoid the
+left range check on each iteration. Moreover, we use
+the more optimized algorithm, so called pair insertion
+sort, which is faster (in the context of Quicksort)
+than traditional implementation of insertion sort.
+
+
+
+
+否则，就会使用双轴快排 dualpivot
+找轴的过程非常复杂
+
+划分几个区域，然后一步一步吃掉没有划分区域的数
+排完以后就一步步递归
+
+这里用到了一个很经典的算法解决问题 Dutch National Flag荷兰国旗问题
+左边小于区，中间等于区，右边大于区
+
+
+
+

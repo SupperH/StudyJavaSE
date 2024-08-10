@@ -59,6 +59,9 @@ public class 归并排序 {
         //因为第二个数组开始是rightPtr，所以中间值就是rightPtr-1
         int mid = rightPtr-1;
         //创建新的数组存放排序好的数组
+        //这里新建数组的长度是rightBound-leftPtr+1
+        //意思是 长度等于右边临界值减去左节点开始位置然后+1
+        //比如只要排前四个 那么左节点开始是在0，然后右边的临界值应该是3 因为下标从0开始，所以这里要加1
         int[] temp = new int[rightBound-leftPtr+1];
 
         int i = leftPtr;//第一个数组的初始位置
