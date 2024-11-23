@@ -51,7 +51,7 @@ public class 归并排序 {
     }
 
     //可以灵活排序数组的那一部分，不仅仅是单纯的分一半，可能分一半的一半
-    //rightbound代表当前数组循环的临界值，因为可能只要排序一部分所以
+    //rightbound代表当前数组循环的临界值，就是长度
     //temp的长度也不能写死，这个是用作判断循环次数的
     static void merge(int[] arr,int leftPtr,int rightPtr , int rightBound){
         //先将数组分为两半
@@ -60,7 +60,7 @@ public class 归并排序 {
         int mid = rightPtr-1;
         //创建新的数组存放排序好的数组
         //这里新建数组的长度是rightBound-leftPtr+1
-        //意思是 长度等于右边临界值减去左节点开始位置然后+1
+        //意思是 长度等于右边临界值减去左节点开始位置然后+1 右边界值其实算是固定的值，就是数组的长度而已，那么这里循环的次数就毋庸置疑数组长度减去右边开始位置+1
         //比如只要排前四个 那么左节点开始是在0，然后右边的临界值应该是3 因为下标从0开始，所以这里要加1
         int[] temp = new int[rightBound-leftPtr+1];
 

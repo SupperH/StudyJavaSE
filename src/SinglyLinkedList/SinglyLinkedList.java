@@ -1,8 +1,14 @@
 package SinglyLinkedList;
 
-//单向链表
+//单向链表（不带哨兵）
+
+/**
+ * 带哨兵的话只需要把head定一个特殊值当作边界判断即可
+ * 双向链表除了next，还需要有个prev指向前面（node类中） 原理都是一样
+ */
 public class SinglyLinkedList {
     private Node head; //头部节点
+
 
     //注意 add方法便利顺序是插入的倒叙 如果要正序用insert方法
     //添加头部
@@ -29,6 +35,7 @@ public class SinglyLinkedList {
     public Node getNode(int index){
         int i = 0;
         for(Node curr = this.head;curr!=null;curr = curr.next,i++){
+
             if(index == i){
                 return curr;
             }

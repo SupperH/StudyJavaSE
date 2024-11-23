@@ -53,6 +53,7 @@ public class 归并排序练习 {
             left++;
             k++;
         }
+        System.out.println(Arrays.toString(temp));
 
         for(int i = 0;i<temp.length;i++){
             arr[leftPtr+i] = temp[i];

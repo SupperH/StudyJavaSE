@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class UdpReceive {
     public static void main(String[] args) throws IOException {
         System.out.println("老师上线了");
-        //创建套接字，指定接收方端口
+        //创建套接字，指定接收方端口 socket创建客户端和服务端
         DatagramSocket ds = new DatagramSocket(9999);
 
         while(true){

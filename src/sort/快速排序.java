@@ -9,10 +9,9 @@ import java.util.Arrays;
  */
 public class 快速排序 {
     public static void main(String[] args) {
-        int[] arr = new int[]{7,3,2,10,8,1,9,5,4,6};
+        int[] arr = {6,8,9,4,3,2,7,1};
+
         sort(arr,0,arr.length-1);
-
-
     }
     static void sort(int[] arr , int leftBound, int rightBound){
         //如果只有一个元素,或者当交换，交换到右边已经超过左边了就结束 直接返回
